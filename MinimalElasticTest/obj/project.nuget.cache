@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "fMqKy8ccWV8=",
+  "success": true,
+  "projectFilePath": "D:\\c# projects\\MusicApp\\MinimalElasticTest\\MinimalElasticTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\elastic.clients.elasticsearch\\9.0.7\\elastic.clients.elasticsearch.9.0.7.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\elastic.transport\\0.9.2\\elastic.transport.0.9.2.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.1\\microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

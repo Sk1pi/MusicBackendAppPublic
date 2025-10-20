@@ -1,0 +1,100 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/0317b99c-616b-46e6-8d9f-8592ab58a2f1.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\0317b99c-616b-46e6-8d9f-8592ab58a2f1.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/0317b99c-616b-46e6-8d9f-8592ab58a2f1.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\0317b99c-616b-46e6-8d9f-8592ab58a2f1.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/0317b99c-616b-46e6-8d9f-8592ab58a2f1.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/1d8cfac6-5992-4a09-b171-3acc7e7c5c1f.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\1d8cfac6-5992-4a09-b171-3acc7e7c5c1f.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/1d8cfac6-5992-4a09-b171-3acc7e7c5c1f.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\1d8cfac6-5992-4a09-b171-3acc7e7c5c1f.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/1d8cfac6-5992-4a09-b171-3acc7e7c5c1f.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/28781152-186d-4f9b-9f6a-b45e6f8ca413.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\28781152-186d-4f9b-9f6a-b45e6f8ca413.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/28781152-186d-4f9b-9f6a-b45e6f8ca413.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\28781152-186d-4f9b-9f6a-b45e6f8ca413.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/28781152-186d-4f9b-9f6a-b45e6f8ca413.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/4ae7c2b0-bc53-44da-b0b0-d109e74ad135.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\4ae7c2b0-bc53-44da-b0b0-d109e74ad135.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/4ae7c2b0-bc53-44da-b0b0-d109e74ad135.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\4ae7c2b0-bc53-44da-b0b0-d109e74ad135.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/4ae7c2b0-bc53-44da-b0b0-d109e74ad135.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/4b9ba252-dc62-4b5b-b71b-c01324d05266.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\4b9ba252-dc62-4b5b-b71b-c01324d05266.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/4b9ba252-dc62-4b5b-b71b-c01324d05266.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\4b9ba252-dc62-4b5b-b71b-c01324d05266.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/4b9ba252-dc62-4b5b-b71b-c01324d05266.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/b04a97f9-ba52-4aa2-935b-5cb2f8ea1584.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\b04a97f9-ba52-4aa2-935b-5cb2f8ea1584.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/b04a97f9-ba52-4aa2-935b-5cb2f8ea1584.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\b04a97f9-ba52-4aa2-935b-5cb2f8ea1584.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/b04a97f9-ba52-4aa2-935b-5cb2f8ea1584.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/bc076e9d-55fd-49c7-bdc3-79c5731cba6f.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\bc076e9d-55fd-49c7-bdc3-79c5731cba6f.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/bc076e9d-55fd-49c7-bdc3-79c5731cba6f.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\bc076e9d-55fd-49c7-bdc3-79c5731cba6f.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/bc076e9d-55fd-49c7-bdc3-79c5731cba6f.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/e24e77c3-4b5c-4bb7-9d39-b31c7a6a9d95.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\e24e77c3-4b5c-4bb7-9d39-b31c7a6a9d95.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MusicBackendApp.API/tracks/e24e77c3-4b5c-4bb7-9d39-b31c7a6a9d95.qnptxbxtav.mp3">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\tracks\e24e77c3-4b5c-4bb7-9d39-b31c7a6a9d95.mp3'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnptxbxtav"},{"Name":"integrity","Value":"sha256-2rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco="},{"Name":"label","Value":"_content/MusicBackendApp.API/tracks/e24e77c3-4b5c-4bb7-9d39-b31c7a6a9d95.mp3"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3265772"},{"Name":"Content-Type","Value":"audio/mpeg"},{"Name":"ETag","Value":"\u00222rsDisnWdpWLHxL6oENXm9XWgO2QyIuNxTWG40R\u002BUco=\u0022"},{"Name":"Last-Modified","Value":"Tue, 19 Aug 2025 12:59:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

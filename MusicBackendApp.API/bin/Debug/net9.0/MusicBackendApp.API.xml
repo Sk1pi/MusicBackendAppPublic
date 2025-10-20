@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MusicBackendApp.API</name>
+    </assembly>
+    <members>
+        <member name="M:MusicBackendApp.Controllers.SubscriptionController.PurchaseSubscription(MusicBackendApp.Contracts.PurchaseSubscriptionRequest)">
+            <summary>
+            Купує нову підписку для користувача.
+            </summary>
+            <param name="request">Дані для покупки підписки.</param>
+            <returns>Результат операції.</returns>
+        </member>
+        <member name="M:MusicBackendApp.Controllers.SubscriptionController.AssignFamilySubscriptionAdmin(System.Guid,MusicBackendApp.Contracts.AssignFamilySubscriptionAdminRequest)">
+            <summary>
+            Призначає головного користувача для сімейної підписки.
+            </summary>
+            <param name="subscriptionId">ID сімейної підписки.</param>
+            <param name="request">Дані для призначення адміністратора.</param>
+            <returns>Результат операції.</returns>
+        </member>
+        <member name="M:MusicBackendApp.Controllers.TracksController.GetTracks(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Отримує треки за назвою.
+            </summary>
+        </member>
+        <member name="M:MusicBackendApp.Controllers.TracksController.GetTrackById(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Отримує трек за ID.
+            </summary>
+        </member>
+        <member name="M:MusicBackendApp.Controllers.TracksController.UploadTrack(MusicBackendApp.Application.Track.Commands.CreateTrack.CreateTrackCommand,System.Threading.CancellationToken)">
+            <summary>
+            Створює новий трек.
+            </summary>
+        </member>
+        <member name="M:MusicBackendApp.Controllers.TracksController.UpdateTrack(System.Guid)">
+            <summary>
+            Оновлює існуючий трек (не реалізовано).
+            </summary>
+        </member>
+        <member name="M:MusicBackendApp.Controllers.TracksController.DeleteTrack(System.Guid)">
+            <summary>
+            Видаляє трек (не реалізовано).
+            </summary>
+        </member>
+    </members>
+</doc>

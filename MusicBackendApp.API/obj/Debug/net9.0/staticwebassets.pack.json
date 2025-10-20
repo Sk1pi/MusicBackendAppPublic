@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\0317b99c-616b-46e6-8d9f-8592ab58a2f1.mp3",
+      "PackagePath": "staticwebassets\\tracks\\0317b99c-616b-46e6-8d9f-8592ab58a2f1.mp3"
+    },
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\1d8cfac6-5992-4a09-b171-3acc7e7c5c1f.mp3",
+      "PackagePath": "staticwebassets\\tracks\\1d8cfac6-5992-4a09-b171-3acc7e7c5c1f.mp3"
+    },
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\28781152-186d-4f9b-9f6a-b45e6f8ca413.mp3",
+      "PackagePath": "staticwebassets\\tracks\\28781152-186d-4f9b-9f6a-b45e6f8ca413.mp3"
+    },
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\4ae7c2b0-bc53-44da-b0b0-d109e74ad135.mp3",
+      "PackagePath": "staticwebassets\\tracks\\4ae7c2b0-bc53-44da-b0b0-d109e74ad135.mp3"
+    },
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\4b9ba252-dc62-4b5b-b71b-c01324d05266.mp3",
+      "PackagePath": "staticwebassets\\tracks\\4b9ba252-dc62-4b5b-b71b-c01324d05266.mp3"
+    },
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\b04a97f9-ba52-4aa2-935b-5cb2f8ea1584.mp3",
+      "PackagePath": "staticwebassets\\tracks\\b04a97f9-ba52-4aa2-935b-5cb2f8ea1584.mp3"
+    },
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\bc076e9d-55fd-49c7-bdc3-79c5731cba6f.mp3",
+      "PackagePath": "staticwebassets\\tracks\\bc076e9d-55fd-49c7-bdc3-79c5731cba6f.mp3"
+    },
+    {
+      "Id": "D:\\c# projects\\MusicBackendApp\\MusicBackendApp.API\\wwwroot\\tracks\\e24e77c3-4b5c-4bb7-9d39-b31c7a6a9d95.mp3",
+      "PackagePath": "staticwebassets\\tracks\\e24e77c3-4b5c-4bb7-9d39-b31c7a6a9d95.mp3"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.MusicBackendApp.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.MusicBackendApp.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.MusicBackendApp.API.props",
+      "PackagePath": "build\\MusicBackendApp.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.MusicBackendApp.API.props",
+      "PackagePath": "buildMultiTargeting\\MusicBackendApp.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.MusicBackendApp.API.props",
+      "PackagePath": "buildTransitive\\MusicBackendApp.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

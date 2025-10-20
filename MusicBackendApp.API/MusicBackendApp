@@ -1,0 +1,42 @@
+﻿version: 0.2
+
+phases:
+  install:
+    commands:
+      # Встановлення Docker на віртуальну машину CodeBuild
+      - apt-get update
+      - apt-get install -y docker.io
+      - service docker start
+
+  pre_build:
+    commands:
+      # Автентифікація в ECR. Змінні AWS надаються CodeBuild автоматично
+      - echo "Logging in to Amazon ECR..."
+      - $(aws ecr get-login-password --region $AWS_DEFAULT_REGION) | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/project/my-music-app
+
+  build:
+    commands:
+      # 1. Збірка та публікація .NET застосунку
+      - echo "Building and publishing the .NET application..."
+      - dotnet publish --configuration Release --output ./publish
+      # 2. Запуск юніт-тестів
+      - echo "Running unit tests..."
+      - dotnet test
+      # 3. Збірка Docker-образу з використанням файлу Dockerfile у корені
+      - echo "Building the Docker image..."
+      - docker build -t my-music-app -f MusicBackendApp.API/Dockerfile .
+      - docker tag my-music-app:latest $REPOSITORY_URI:latest
+      
+
+  post_build:
+    commands:
+      # Завантаження образу до ECR
+      - echo "Pushing the Docker image to ECR..."
+      - docker push $REPOSITORY_URI:latest
+
+artifacts:
+  files:
+    - '**/*' 
+
+# Final check

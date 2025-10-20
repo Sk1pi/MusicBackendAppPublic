@@ -1,0 +1,61 @@
+﻿using AutoMapper;
+using MediatR;
+using Microsoft.Extensions.Caching.Distributed;
+using MusicBackendApp.Application.Common.Extensions;
+using MusicBackendApp.Application.Common.Interfaces.Repositories;
+using MusicBackendApp.Domain.Entites.Objects.TitlesNames;
+
+namespace MusicBackendApp.Application.Artists.Queries.GetArtistByName;
+
+public class GetArtistByNameQueryHandler 
+    : IRequestHandler<GetArtistByNameQuery, ArtistListVm>
+{
+    private readonly IDistributedCache _cache;
+    private readonly IArtistRepository _artistRepository;
+    private readonly IMapper _mapper;
+    
+    public GetArtistByNameQueryHandler(IArtistRepository artistRepository, 
+        IMapper mapper, IDistributedCache cache) =>
+        (_artistRepository, _mapper, _cache) = (artistRepository, mapper, cache);
+
+    public async Task<ArtistListVm> Handle(GetArtistByNameQuery request, 
+        CancellationToken cancellationToken)
+    {
+        var cacheKey = $"GetArtistByNameQueryHandler_{request.Name}";
+        var cachedArtist = await _cache.GetRecordAsync<List<ArtistLookupDto>>(cacheKey);
+
+        if (cachedArtist == null)
+        {
+            // Правильно створюємо Value Object через фабричний метод
+            var nameResult = ArtistName.Create(request.Name);
+            if (nameResult.IsFailure)
+            {
+                // Якщо назва невалідна, повертаємо порожній список
+                return new ArtistListVm { Artists = new List<ArtistLookupDto>() };
+            }
+        
+            var artistName = nameResult.Value;
+        
+            var artistsFromDb = await _artistRepository.SearchByNameAsync(artistName);
+        
+            //var entities = artistsResult.Value;  // Отримуємо колекцію Artists
+        
+            // 4. Мапуємо колекцію Artists до ArtistLookupDto за допомогою ProjectTo
+            // ProjectTo працює з IQueryable. Якщо entities не IQueryable, можливо, доведеться використовувати .ToList().AsQueryable()
+            // Або якщо ProjectTo має бути виконаний на стороні БД, переконайтеся, що _artistRepository.GetByName
+            // повертає IQueryable<Artist> (але зазвичай репозиторії повертають IEnumerable<T> або List<T>).
+            // Якщо GetByName повертає IEnumerable<Artist>, то ProjectTo буде виконано в пам'яті.
+            /*var artists = await entities.AsQueryable() // Перетворюємо IEnumerable на IQueryable, якщо потрібно для ProjectTo
+             .ProjectTo<ArtistLookupDto>(_mapper.ConfigurationProvider)
+             .ToListAsync(cancellationToken);*/
+        
+            var mappedArtists = _mapper.Map<List<ArtistLookupDto>>(artistsFromDb);
+            
+            await _cache.SetRecordAsync(cacheKey, mappedArtists, TimeSpan.FromDays(1));
+        
+            return new ArtistListVm {Artists = mappedArtists};
+        }
+        
+        return new ArtistListVm { Artists = cachedArtist };
+    }
+}

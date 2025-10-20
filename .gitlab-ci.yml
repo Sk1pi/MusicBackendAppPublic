@@ -1,0 +1,48 @@
+stages:
+  - build
+  - test
+  - publish
+
+variables:
+  DOCKER_IMAGE_NAME: my-music-app
+  DOCKER_REGISTRY: $CI_REGISTRY_IMAGE
+
+cache:
+  key:
+    files:
+      - '**/packages.lock.json'
+    prefix: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .nuget/packages/
+  policy: pull-push
+
+build_job:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+  script:
+    - echo "Building the .NET application..."
+    - dotnet restore --packages .nuget/packages
+    - dotnet build --configuration Release --no-restore
+
+test_job:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+  script:
+    - echo "Running unit tests..."
+    - dotnet test --no-build
+
+publish_job:
+  stage: publish
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - echo "Building and pushing Docker image..."
+    - docker build -f MusicBackendApp.API/Dockerfile -t "$DOCKER_REGISTRY:$CI_COMMIT_SHORT_SHA" .
+    - docker push "$DOCKER_REGISTRY:$CI_COMMIT_SHORT_SHA"
+    - docker tag "$DOCKER_REGISTRY:$CI_COMMIT_SHORT_SHA" "$DOCKER_REGISTRY:latest"
+    - docker push "$DOCKER_REGISTRY:latest"
+  only:
+    - main
