@@ -9,8 +9,8 @@ public interface ITrackRepository
 {
     Task<Result<Domain.Entites.Track, Error>> GetByIdAsync(TrackId id);
     Task<bool> DoesArtistHaveTrackWithTitleAsync(ArtistId artistId, Title title);
-    Task<Result<IQueryable<Domain.Entites.Track>, Error>> GetByTitle(Title title); // було Domain.Entites.Track track
-    Task<Result<IEnumerable<Domain.Entites.Track>, Error>> GetByArtistIdAsync(Guid artistId); // Новий метод, який ми обговорювали
+    Task<Result<IQueryable<Domain.Entites.Track>, Error>> GetByTitle(Title title);
+    Task<Result<IEnumerable<Domain.Entites.Track>, Error>> GetByArtistIdAsync(Guid artistId);
     Task AddAsync(Domain.Entites.Track track);
     void DeleteAsync(Domain.Entites.Track track);
     

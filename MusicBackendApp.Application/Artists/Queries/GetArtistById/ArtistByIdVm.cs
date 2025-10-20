@@ -6,7 +6,6 @@ namespace MusicBackendApp.Application.Artists.Queries.GetArtistById;
 
 public class ArtistByIdVm : IMapWith<Artist>
 {
-    //public List<ArtistLookupDto> Artists { get; set; }
     
     public Guid Id { get; set; }
     public string Name { get; set; }
@@ -14,7 +13,7 @@ public class ArtistByIdVm : IMapWith<Artist>
     public string Password { get; set; }    
     public int Subs { get; init; }
 
-    public void Mapping(Profile profile) //профіль мапінгу AutoMapper), в якому ви реєструєте свої правила.
+    public void Mapping(Profile profile) 
     {
         profile.CreateMap<Artist, ArtistByIdVm>()
             .ForMember(dest => dest.Id,
@@ -29,5 +28,3 @@ public class ArtistByIdVm : IMapWith<Artist>
                 opt => opt.MapFrom(src => src.Subs));
     }
 }
-
-//IRequest використовується для команд/запитів, які відправляються через MediatR.

@@ -21,9 +21,6 @@ public static class ResponseExtensions
         
         var responseError = new ResponseError(error.Code, error.Message, null);
         
-        //ObjectResult: Це реалізація IActionResult в ASP.NET Core,
-        //яка дозволяє повернути об'єкт (у даному випадку envelope) і
-        //явно встановити HTTP-статус код.
         var envelope = Envelope.Error([responseError]);
 
         return new ObjectResult(envelope)

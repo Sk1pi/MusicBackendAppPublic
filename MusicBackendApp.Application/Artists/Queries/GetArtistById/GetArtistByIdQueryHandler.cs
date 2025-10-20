@@ -17,7 +17,7 @@ public class GetArtistByIdQueryHandler(
     public async Task<ArtistByIdVm> Handle(GetArtistByIdQuery request, 
         CancellationToken cancellationToken)
     {
-        string cacheKey = $"{nameof(GetArtistByIdQueryHandler)}-{request.Id}"; //Обережно, бо тут мав бути інший код
+        string cacheKey = $"{nameof(GetArtistByIdQueryHandler)}-{request.Id}"; 
         var cachedArtists = await cache.GetRecordAsync<ArtistByIdVm>(cacheKey);
 
         if (cachedArtists == null)
@@ -26,15 +26,12 @@ public class GetArtistByIdQueryHandler(
         
             var artistResult = await artistRepository.GetByIdAsync(artistId);
         
-            if(artistResult.IsFailure) //Виправити помилку
+            if(artistResult.IsFailure) 
             {
-                // Або можна адаптувати, щоб він приймав ваш Error об'єкт.
                 throw new CustomNotFoundException(nameof(Artist), request.Id);
-                // Або, якщо ваш Error має тип "NotFound", можна так:
-                // if (artistResult.Error.Type == ErrorType.NotFound) throw new CustomNotFoundException(artistResult.Error.Message);
             }
         
-            var entity = artistResult.Value; // Отримуємо саму сутність Artist
+            var entity = artistResult.Value; 
 
             var resultVm = mapper.Map<ArtistByIdVm>(entity);
             
@@ -42,15 +39,9 @@ public class GetArtistByIdQueryHandler(
 
             return resultVm;
         }
-        else // 6. Якщо дані в кеші Є (Cache Hit)
+        else 
         {
-            return cachedArtists; // Просто повертаємо закешовані дані
+            return cachedArtists; 
         }
     }
-    
-    /*src.Id.Value: У AutoMapper, src.Id є типом ArtistId. Але ArtistByIdVm.Id очікує Guid.
-     Тому ви використовуєте .Value для "розпакування" Guid з ArtistId.
-     Те ж саме стосується ArtistName.Value, Email.Value, Password.Value.*/
-    /*(entity): Це джерельний об'єкт, який потрібно перетворити.
-     У цьому випадку, entity – це ваш об'єкт доменної сутності Artist, який ви отримали з репозиторію.*/
 }

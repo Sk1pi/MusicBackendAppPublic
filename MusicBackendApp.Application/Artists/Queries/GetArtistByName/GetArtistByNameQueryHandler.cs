@@ -26,7 +26,6 @@ public class GetArtistByNameQueryHandler
 
         if (cachedArtist == null)
         {
-            // Правильно створюємо Value Object через фабричний метод
             var nameResult = ArtistName.Create(request.Name);
             if (nameResult.IsFailure)
             {
@@ -37,17 +36,6 @@ public class GetArtistByNameQueryHandler
             var artistName = nameResult.Value;
         
             var artistsFromDb = await _artistRepository.SearchByNameAsync(artistName);
-        
-            //var entities = artistsResult.Value;  // Отримуємо колекцію Artists
-        
-            // 4. Мапуємо колекцію Artists до ArtistLookupDto за допомогою ProjectTo
-            // ProjectTo працює з IQueryable. Якщо entities не IQueryable, можливо, доведеться використовувати .ToList().AsQueryable()
-            // Або якщо ProjectTo має бути виконаний на стороні БД, переконайтеся, що _artistRepository.GetByName
-            // повертає IQueryable<Artist> (але зазвичай репозиторії повертають IEnumerable<T> або List<T>).
-            // Якщо GetByName повертає IEnumerable<Artist>, то ProjectTo буде виконано в пам'яті.
-            /*var artists = await entities.AsQueryable() // Перетворюємо IEnumerable на IQueryable, якщо потрібно для ProjectTo
-             .ProjectTo<ArtistLookupDto>(_mapper.ConfigurationProvider)
-             .ToListAsync(cancellationToken);*/
         
             var mappedArtists = _mapper.Map<List<ArtistLookupDto>>(artistsFromDb);
             

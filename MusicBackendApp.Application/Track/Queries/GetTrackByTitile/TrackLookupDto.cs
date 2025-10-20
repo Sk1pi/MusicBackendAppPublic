@@ -14,11 +14,11 @@ public class TrackLookupDto : IMapWith<Domain.Entites.Track>
     {
         profile.CreateMap<Domain.Entites.Track, TrackLookupDto>()
             .ForMember(trackDto => trackDto.Id,
-                opt => opt.MapFrom(src => src.Id.Value)) // Треба брати .Value
+                opt => opt.MapFrom(src => src.Id.Value)) 
             .ForMember(trackDto => trackDto.Title,
-                opt => opt.MapFrom(src => src.Title.Value)) // Треба брати .Value
+                opt => opt.MapFrom(src => src.Title.Value)) 
             .ForMember(trackDto => trackDto.ArtistName,
-                opt => opt.MapFrom(src => src.Author.ArtistName.Value)) // Беремо з навігації
+                opt => opt.MapFrom(src => src.Author.ArtistName.Value)) 
             .ForMember(dto => dto.FilePath,
                 opt => opt.MapFrom(src => src.FilePath));
     }

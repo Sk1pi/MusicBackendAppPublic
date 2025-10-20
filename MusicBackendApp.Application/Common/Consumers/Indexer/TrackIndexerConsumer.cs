@@ -10,9 +10,9 @@ namespace MusicBackendApp.Application.Common.Consumers.Indexer;
 public class TrackIndexerConsumer : IConsumer<TrackCreatedEvent>
 {
     private readonly ISearchService _searchService;
-    private readonly IArtistRepository _artistRepository; // Можливо, потрібен для ArtistName
+    private readonly IArtistRepository _artistRepository;
 
-    public TrackIndexerConsumer(ISearchService searchService, IArtistRepository artistRepository) // Ін'єктуємо
+    public TrackIndexerConsumer(ISearchService searchService, IArtistRepository artistRepository)
     {
         _searchService = searchService;
         _artistRepository = artistRepository;
@@ -20,13 +20,10 @@ public class TrackIndexerConsumer : IConsumer<TrackCreatedEvent>
 
     public async Task Consume(ConsumeContext<TrackCreatedEvent> context)
     {
-        var trackEvent = context.Message; // Отримуємо дані з події
-
-        // Часто події не містять всіх даних, необхідних для пошукової моделі.
-        // Наприклад, ArtistName. Його потрібно отримати з БД через репозиторій.
-        // Або модифікуй ArtistCreatedEvent, щоб він містив ArtistName.
-        string artistName = trackEvent.Title;  // Заглушка
-        if (trackEvent.ArtistId != Guid.Empty) // Перевірка, чи ArtistId є в події
+        var trackEvent = context.Message; 
+        
+        string artistName = trackEvent.Title;  
+        if (trackEvent.ArtistId != Guid.Empty)
         {
             var artistResult = await _artistRepository.GetByIdAsync(new ArtistId(trackEvent.ArtistId));
             if (artistResult.IsSuccess)

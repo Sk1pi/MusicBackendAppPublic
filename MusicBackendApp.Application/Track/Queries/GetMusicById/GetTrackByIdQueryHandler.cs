@@ -25,17 +25,16 @@ public class GetTrackByIdQueryHandler
         GetTrackByIdQuery request, 
         CancellationToken cancellationToken)
     {
-        string cacheKey = $"{nameof(GetTrackByIdQueryHandler)}-{request.Id}"; //Може бути помилкою, бо має бути інший код
+        string cacheKey = $"{nameof(GetTrackByIdQueryHandler)}-{request.Id}"; 
         var cachedTrack = await _cache.GetRecordAsync<TrackIdVm>(cacheKey);
 
         if (cachedTrack is null)
         {
-            // ▼▼▼ Створюємо Value Object з Guid, що прийшов у запиті ▼▼▼
             var trackId = new TrackId(request.Id);
         
             var trackResult = await _trackRepository.GetByIdAsync(trackId);
 
-            if (trackResult.IsFailure) //Виправити помилку
+            if (trackResult.IsFailure)
             {
                 throw new CustomNotFoundException(nameof(Track), request.Id);
             }

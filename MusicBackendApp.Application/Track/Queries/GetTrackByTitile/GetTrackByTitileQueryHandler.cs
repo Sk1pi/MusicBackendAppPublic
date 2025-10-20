@@ -8,7 +8,7 @@ using MusicBackendApp.Domain.Entites.Objects.TitlesNames;
 namespace MusicBackendApp.Application.Track.Queries.GetTrackByTitile;
 
 public class GetTrackByTitileQueryHandler
-    : IRequestHandler<GetTrackByTitileQuery, TrackListVm>//має бути list, щоб повертав список
+    : IRequestHandler<GetTrackByTitileQuery, TrackListVm>
 {
     private readonly ITrackRepository _trackRepository;
     private readonly IMapper _mapper;
@@ -32,11 +32,9 @@ public class GetTrackByTitileQueryHandler
             {
                 return new TrackListVm { Tracks = new List<TrackLookupDto>() };
             }
-        
-            // Викликаємо наш новий, правильний метод репозиторія
+            
             var tracksFromDb = await _trackRepository.SearchByTitleAsync(titleResult.Value);
-        
-            // Мапимо результат
+            
             var mappedTracks = _mapper.Map<List<TrackLookupDto>>(tracksFromDb);
             
             await _cache.SetRecordAsync(cacheKey, mappedTracks, new TimeSpan(0, 30, 0));

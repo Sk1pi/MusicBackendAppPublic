@@ -9,7 +9,7 @@ namespace MusicBackendApp.Application.Common;
 public class PaymentGatewayService : IPaymentGatewayService
 {
     private readonly ILogger<PaymentGatewayService> _logger;
-    private readonly Random _random = new Random(); // Для імітації випадкових помилок
+    private readonly Random _random = new Random(); 
 
     public PaymentGatewayService(ILogger<PaymentGatewayService> logger)
     {
@@ -19,12 +19,8 @@ public class PaymentGatewayService : IPaymentGatewayService
     public Task<Result<bool, Error>> ChargeAsync(Guid userId, decimal amount, PaymentType paymentFrequency)
     {
         _logger.LogInformation($"[PaymentGateway] Attempting to charge user {userId} for {amount} {paymentFrequency} subscription.");
-
-        // Імітуємо затримку
-        // await Task.Delay(500);
-
-        // Імітуємо успіх або невдачу
-        if (_random.Next(1, 100) > 90) // 10% шанс на помилку
+        
+        if (_random.Next(1, 100) > 90)
         {
             _logger.LogError($"[PaymentGateway] Payment failed for user {userId}. Amount: {amount}");
             return Task.FromResult(Result.Failure<bool, Error>(Errors.Payment.PaymentFailed("Payment gateway declined the transaction.")));

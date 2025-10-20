@@ -11,7 +11,6 @@ public class UserIdVm : IMapWith<Domain.Entites.User>
     public string? Email { get; init; }
     public decimal LikedTracks { get; init; }
     public int Subs { get; init; }
-    //Чи потрібно мапити пароль, email?
 
     public void Mapping(Profile profile)
     {
@@ -20,10 +19,6 @@ public class UserIdVm : IMapWith<Domain.Entites.User>
                 opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.Name,
                 opt => opt.MapFrom(src => src.Name))
-            /*.ForMember(dest => dest.Password,
-                opt => opt.MapFrom(src => src.Password));
-            .ForMember(dest => dest.Email,
-                opt => opt.MapFrom(src => src.Email))*/
             .ForMember(dest => dest.LikedTracks,
                 opt => opt.MapFrom(src => src.LikedTracks))
             .ForMember(dest => dest.Subs,

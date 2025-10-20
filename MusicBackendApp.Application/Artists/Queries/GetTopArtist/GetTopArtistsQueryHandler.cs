@@ -35,17 +35,12 @@ public class GetTopArtistsQueryHandler
 
         if (cachedArtists is null)
         {
-            // 1. Викликаємо новий метод репозиторія
             var topArtists = await _artistRepository.GetTopArtistsAsync(request.Count);
-
-            // 2. Мапимо результат на DTO
+            
             var mappedArtists = _mapper.Map<List<ArtistLookupDto>>(topArtists);
             
-            // 4. Збережи дані в кеші перед тим, як повернути їх
-            // Наприклад, на 5 хвилин
             await _cache.SetRecordAsync(cacheKey, mappedArtists, TimeSpan.FromSeconds(60));
             
-            //\Повертаємо ViewModel
             return new ArtistListVm { Artists = mappedArtists };
         }
         

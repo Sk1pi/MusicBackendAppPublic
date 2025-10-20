@@ -15,14 +15,13 @@ public class TrackIdVm : IMapWith<Domain.Entites.Track>
     {
         profile.CreateMap<Domain.Entites.Track, TrackIdVm>()
             .ForMember(trackVm => trackVm.TrackId,
-                opt => opt.MapFrom(track => track.Id.Value)) // Треба брати .Value
+                opt => opt.MapFrom(track => track.Id.Value)) 
             .ForMember(trackVm => trackVm.Valume,
                 opt => opt.MapFrom(track => track.Valume))
             .ForMember(trackVm => trackVm.Title,
-                opt => opt.MapFrom(track => track.Title.Value)) // Треба брати .Value
+                opt => opt.MapFrom(track => track.Title.Value)) 
             .ForMember(trackVm => trackVm.DurationInSeconds,
                 opt => opt.MapFrom(track => track.Duration.TotalSeconds))
-            // Для імені артиста беремо його з навігаційної властивості
             .ForMember(trackVm => trackVm.ArtistName,
                 opt => opt.MapFrom(track => track.Author.ArtistName.Value));
 

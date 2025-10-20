@@ -5,7 +5,6 @@ namespace MusicBackendApp.Application.Common.Extensions;
 
 public static class DistributedCacheExtensions
 {
-    //public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     public static async Task SetRecordAsync<T>(
         this IDistributedCache cache, 
         string recordId, 

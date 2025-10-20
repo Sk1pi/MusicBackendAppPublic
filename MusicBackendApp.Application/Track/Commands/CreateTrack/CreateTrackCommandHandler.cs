@@ -48,7 +48,6 @@ public class CreateTrackCommandHandler
     
      public async Task<Result<Guid, Error>> Handle(CreateTrackCommand request, CancellationToken cancellationToken)
     {
-        // === Крок 1: Визначення користувача ===
         var userIdString = _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
         if (!Guid.TryParse(userIdString, out var userIdGuid))
         {
@@ -56,31 +55,28 @@ public class CreateTrackCommandHandler
         }
         var userId = new UserId(userIdGuid);
         
-        // === Крок 2: Пошук або створення профілю артиста ===
         var artist = await _artistRepository.FindByUserIdAsync(userId);
         
         if (artist is null)
         {
-            // Метод GetByIdAsync має повертати Result<User, Error>
             var userResult = await _userRepository.GetByIdAsync(userId);
             if (userResult.IsFailure) 
             {
                 return Result.Failure<Guid, Error>(userResult.Error);
             }
-            var user = userResult.Value; // <-- РОЗПАКОВУЄМО РЕЗУЛЬТАТ
+            var user = userResult.Value;
 
-            var artistNameResult = ArtistName.Create(user.Name.Value); // <-- ВИКОРИСТОВУЄМО user.Name.Value
+            var artistNameResult = ArtistName.Create(user.Name.Value);
             if (artistNameResult.IsFailure) return Result.Failure<Guid, Error>(artistNameResult.Error);
             var newArtistName = artistNameResult.Value;
             
             var existingArtistResult = await _artistRepository.FindExactByNameAsync(newArtistName);
-            // Перевіряємо, що ім'я не зайняте ІНШИМ користувачем
+
             if (existingArtistResult.IsSuccess && existingArtistResult.Value.UserId != userId)
             {
                 return Result.Failure<Guid, Error>(Errors.Artist.NameAlreadyTaken(newArtistName.Value));
             }
-
-            // Передаємо розпаковані об'єкти
+            
             var artistCreateResult = Artist.Create(newArtistName, user.Email, user.Password, userId, user.Subs);
             if(artistCreateResult.IsFailure) return Result.Failure<Guid, Error>(artistCreateResult.Error);
             
@@ -94,7 +90,6 @@ public class CreateTrackCommandHandler
             });
         }
         
-        // === Крок 3: Валідація та створення треку ===
         var titleResult = Title.Create(request.Title);
         if (titleResult.IsFailure) return Result.Failure<Guid, Error>(titleResult.Error);
         var trackTitle = titleResult.Value;
@@ -104,10 +99,8 @@ public class CreateTrackCommandHandler
             return Result.Failure<Guid, Error>(Errors.Module.AlreadyExist("Track with this title already exists."));
         }
         
-        // === Крок 4: Збереження файлу ===
         var fileName = Guid.NewGuid().ToString() + Path.GetExtension(request.AudioFile.FileName);
-        // Створюємо відносний шлях, який будемо зберігати в БД
-        var relativePath = Path.Combine("/tracks", fileName); // Шлях починається зі слеша
+        var relativePath = Path.Combine("/tracks", fileName); 
         var absolutePath = Path.Combine("wwwroot", "tracks", fileName);
         
         using (var stream = new FileStream(absolutePath, FileMode.Create))
@@ -115,15 +108,12 @@ public class CreateTrackCommandHandler
             await request.AudioFile.CopyToAsync(stream, cancellationToken);
         }
         
-        // Тут має бути ваша логіка збереження файлу
-        
-        //var trackCreateResult = Domain.Entites.Track.Create(artist.Id, trackTitle, request.Duration, request.Valume, null, relativePath);
-        var trackCreateResult = _trackDirector.BuildTrack( // <--- ТУТ ВИКОРИСТОВУЄМО ДИРЕКТОРА
-            trackTitle,                 // Передаємо Title
-            request.Duration,           // Передаємо Duration
-            artist.Id,                  // Передаємо ArtistId
-            relativePath,               // Передаємо FilePath
-            request.Valume,             // Передаємо Valume
+        var trackCreateResult = _trackDirector.BuildTrack( 
+            trackTitle,                 
+            request.Duration,           
+            artist.Id,                  
+            relativePath,               
+            request.Valume,             
             request.collaborationNote);
         
         if(trackCreateResult.IsFailure) 

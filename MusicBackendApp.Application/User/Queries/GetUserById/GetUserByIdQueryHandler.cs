@@ -27,10 +27,7 @@ public class GetUserByIdQueryHandler(
         
             if(userResult.IsFailure) //Виправити помилку
             {
-                // Або можна адаптувати, щоб він приймав ваш Error об'єкт.
                 throw new CustomNotFoundException(nameof(User), request.Id);
-                // Або, якщо ваш Error має тип "NotFound", можна так:
-                // if (artistResult.Error.Type == ErrorType.NotFound) throw new CustomNotFoundException(artistResult.Error.Message);
             }
 
             var entity = userResult.Value;

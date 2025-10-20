@@ -49,21 +49,15 @@ public class AddTrackToFavoritesCommandHandler : IRequestHandler<AddTrackToFavor
         
         var trackToAdd = trackResult.Value;
         
-        // 3. Додати трек до улюблених треків користувача (бізнес-логіка на рівні домену)
-        // Примітка: Цей метод має бути доданий до твоєї сутності User
-        // Він також повинен перевіряти, чи трек вже не в списку улюблених
-        var addResult = user.AddFavoriteTrack(trackToAdd); // Припустимо, ти створиш цей метод у класі User
+        var addResult = user.AddFavoriteTrack(trackToAdd); 
 
         if (addResult.IsFailure)
         {
             return Result.Failure<Guid, Error>(Errors.General.NotFound("Can`t add track to favorites"));
         }
         
-        // 4. Зберегти зміни в репозиторії (і таким чином у базі даних)
-        // Тобі, можливо, доведеться додати метод UpdateAsync(User user) в IUserRepository
-        await _userRepository.UpdateUserAsync(user); // Або SaveChangesAsync() якщо це DbContext
+        await _userRepository.UpdateUserAsync(user); 
         
-        // 5. Інвалідувати кеш для улюблених треків цього користувача
         string cacheKey = $"FavoriteTracks_UserId_{request.UserId.Value}";
         await _cache.RemoveAsync(cacheKey);
 
@@ -72,8 +66,7 @@ public class AddTrackToFavoritesCommandHandler : IRequestHandler<AddTrackToFavor
             UserId = request.UserId.Value,
             TrackId = trackToAdd.Id.Value
         });
-
-        // 6. Повернути успішний результат (можна повернути ID треку, який був доданий)
+        
         return Result.Success<Guid, Error>(request.TrackId.Value);
     }
 }

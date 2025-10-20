@@ -26,6 +26,3 @@ public class CreateArtistCommandValidator : AbstractValidator<CreateArtistComman
             .MustBeValueObject(Password.Create);
     }
 }
-/*Причина: Методу розширення MustBeValueObject потрібні
- два параметри типу (TValue та TError), щоб він міг визначити тип 
- Result<TValue, TError>. Ви передаєте лише фабричний метод.*/

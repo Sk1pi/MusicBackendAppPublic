@@ -22,13 +22,10 @@ public class ArtistIndexerConsumer : IConsumer<ArtistCreatedEvent>
     
     public async Task Consume(ConsumeContext<ArtistCreatedEvent> context)
     {
-        var artistEvent = context.Message; // Отримуємо дані з події
+        var artistEvent = context.Message; 
         
-        // Часто події не містять всіх даних, необхідних для пошукової моделі.
-        // Наприклад, ArtistName. Його потрібно отримати з БД через репозиторій.
-        // Або модифікуй ArtistCreatedEvent, щоб він містив ArtistName.
         string? artistName = artistEvent.ArtistName;
-        if (artistEvent.ArtistId != Guid.Empty) // Перевірка, чи ArtistId є в події
+        if (artistEvent.ArtistId != Guid.Empty) 
         {
             var artistResult = await _artistRepository.GetByIdAsync(new ArtistId(artistEvent.ArtistId));
             if (artistResult.IsSuccess)

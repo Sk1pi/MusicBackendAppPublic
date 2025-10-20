@@ -82,12 +82,8 @@ public class PurchaseSubscriptionCommandHandler: IRequestHandler<PurchaseSubscri
         var paymentResult = await _paymentGatewayService.ChargeAsync(request.UserId, priceToCharge, newSubscription.PaymentFrequency);
         if (paymentResult.IsFailure) return Result.Failure<Unit, Error>(paymentResult.Error);
         
-        // === Загальна логіка: ДОДАЄМО НОВИЙ абонемент у репозиторій ===
-        await _subscriptionRepository.AddAsync(newSubscription); // <--- МАЄ БУТИ AddAsync, НЕ UpdateAsync!
-        // Тобі потрібно буде додати AddAsync до ISubscriptionRepository
-
-        // ... Можливо, тут відправити подію через MassTransit: SubscriptionPurchasedEvent ...
-
+        await _subscriptionRepository.AddAsync(newSubscription); 
+        
         return Result.Success<Unit, Error>(Unit.Value);
     }
 }

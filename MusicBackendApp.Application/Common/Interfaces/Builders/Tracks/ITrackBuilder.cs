@@ -7,8 +7,6 @@ namespace MusicBackendApp.Application.Common.Interfaces.Builders.Tracks;
 
 public interface ITrackBuilder
 {
-    // ПОМИЛКА: Методи With... не приймають параметрів і повертають Result<T, Error>
-    // Правильно: Вони повинні ПРИЙМАТИ параметри (дані) і повертати ІНТЕРФЕЙС БІЛДЕРА (this) для ланцюговості
     ITrackBuilder WithTitle(Title title); // Повинно приймати Title як параметр
     ITrackBuilder WithDuration(TimeSpan duration);
     ITrackBuilder WithArtist(ArtistId artistId); // Повинно приймати ArtistId

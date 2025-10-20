@@ -30,21 +30,14 @@ public class TrackDirector
             .WithArtist(artistId)
             .WithFilePath(filePath)
             .WithVolume(volume);
-
-        // Ось тут і з'являється гнучкість:
-        // Якщо є примітка про співавторство, тоді додаємо її
+        
         if (!string.IsNullOrWhiteSpace(collaborationNote))
         {
             _trackBuilder.WithCollaborationNote(collaborationNote);
         }
-
-        // Наприкінці повертаємо результат від будівельника
-        // Пам'ятай, що _trackBuilder.Build() має повертати Result<Track, Error>
-        // Тому тобі потрібно буде обробити цей Result тут або в хендлері
+        
         var buildResult = _trackBuilder.Build();
-
-        // Якщо ти обробляєш Result тут, тобі потрібно буде або кинути виняток,
-        // або змінити повертаючий тип цього методу BuildTrack на Result<Track, Error>
+        
         if (buildResult.IsFailure)
         {
             throw new InvalidOperationException(buildResult.Error.Message); // Приклад обробки

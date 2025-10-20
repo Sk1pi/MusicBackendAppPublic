@@ -10,8 +10,5 @@ public class GetUserByIdQueryValidator : AbstractValidator<GetUserByIdQuery>
         RuleFor(x => x.Id).NotEmpty()
             .NotNull().WithMessage(Errors.General.ValueIsRequired("User ID").Serialize())
             .NotEmpty().WithMessage(Errors.General.ValueIsRequired("User ID").Serialize());
-        // Тепер, коли ArtistId.FromGuid повертає Result<ArtistId, Error>,
-        // компілятор зможе вивести типи автоматично, і явне вказання generic параметрів може бути не потрібним.
-
     }
 }

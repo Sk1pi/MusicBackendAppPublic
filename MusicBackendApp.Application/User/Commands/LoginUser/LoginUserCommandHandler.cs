@@ -48,9 +48,7 @@ public class LoginUserCommandHandler
             return Result.Failure<AuthResponse, Error>(Errors.General.NotFound());
         }
         var email = emailResult.Value;
-
-        // 2. Пошук користувача в репозиторії
-        // Припускаємо, що FindByEmailAsync повертає Result<User, Error>
+        
         var userResult = await _userRepository.FindByEmailAsync(email);
         if (userResult.IsFailure)
         {
@@ -58,10 +56,7 @@ public class LoginUserCommandHandler
             return Result.Failure<AuthResponse, Error>(Errors.General.NotFound());
         }
         var user = userResult.Value;
-
-        // 3. ПРАВИЛЬНА ПЕРЕВІРКА ПАРОЛЯ за допомогою IPasswordHasher
-        // Раніше було user.Password.Value != request.Password, але user.Password.Value - це вже хеш
-        // Тому потрібно перевіряти сирий пароль (request.Password) проти хешованого (user.Password.Value)
+        
         if (!_passwordHasher.Verify(request.Password, user.Password.Value))
         {
             return Result.Failure<AuthResponse, Error>(Errors.General.NotFound());

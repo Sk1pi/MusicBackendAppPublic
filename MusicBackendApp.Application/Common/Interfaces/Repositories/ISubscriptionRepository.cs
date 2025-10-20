@@ -6,7 +6,7 @@ namespace MusicBackendApp.Application.Common.Interfaces.Repositories;
 
 public interface ISubscriptionRepository
 {
-    Task<Result<IUserSubscription, Error>> GetByIdAsync(Guid subscriptionId); // <--- ВИПРАВЛЕНО ТУТ
+    Task<Result<IUserSubscription, Error>> GetByIdAsync(Guid subscriptionId);
     Task UpdateAsync(IUserSubscription subscription);
 
     Task AddAsync(IUserSubscription subscription);
